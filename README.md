@@ -287,7 +287,7 @@ Describe some of the test cases for a service that processes CSV files.
         <td>Ensure that the service gracefully handles consuming a CSV file with the wrong-format (ie, with additional data values that don't correspond to certain columns) and returns a useful error to the user.</td>
         <td>High</td>
     </tr>
-        <tr>
+    <tr>
         <td>5</td>
         <td>Consuming a CSV File that has Invalid Data</td>
         <td>Ensure that the service gracefully handles consuming a CSV file with invalid data (ie, invalid date values in a date column) and returns a useful error to the user.</td>
@@ -295,43 +295,85 @@ Describe some of the test cases for a service that processes CSV files.
     </tr>
     <tr>
         <td>6</td>
+        <td>Consuming a CSV File that has Quoted Data</td>
+        <td>Ensure that the service gracefully handles consuming a CSV file with quoted data.</td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Consuming a CSV File that has a Combination of Quoted and Unquoted Data</td>
+        <td>Ensure that the service gracefully handles consuming a CSV file with a combination of quoted and unquoted data.</td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Consuming a CSV File that has Quoted Data with Embedded Commas</td>
+        <td>Ensure that the service gracefully handles consuming a CSV file with quoted data that contains commas.</td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Consuming a CSV File that has Quoted Data with Embedded Quotes</td>
+        <td>Ensure that the service gracefully handles consuming a CSV file with quoted data that contain embedded quotes.</td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Consuming a CSV File that has Quoted Data with Embedded Newlines</td>
+        <td>Ensure that the service gracefully handles consuming a CSV file with quoted data that contain the newline character.</td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Distinguishing Between Empty String and Nulls</td>
+        <td>Ensure that the service can distinguish between an empty string and a null if required (ie, by the specific column or at a configuration level).</td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>Consuming a CSV File that has Trailing Blank Lines</td>
+        <td>Ensure that the service gracefully handles consuming a CSV file with trailing blank lines.</td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td>13</td>
         <td>Consuming a file that is not a CSV File</td>
         <td>Ensure that the service gracefully handles consuming a file that is not a CSV file and returns a useful error to the user.</td>
         <td>Medium</td>
     </tr>
     </tr>
         <tr>
-        <td>7</td>
+        <td>14</td>
         <td>Interrupting the Service</td>
         <td>Ensure that the service can be interrupted while it is consuming a CSV file, that it can be easily terminated and handles that termination gracefully.</td>
         <td>Medium</td>
     </tr>
     <tr>
-        <td>8</td>
+        <td>15</td>
         <td>Consuming a Well-formatted CSV File with a very large Number of Data Values</td>
         <td>Ensure that the service can consume a well-formatted CSV file that has a very large number of data values, with an appropriate indicator to the user if the service is still processing the file that has been provided, and good error handling if the service times out.</td>
         <td>Medium</td>
     </tr>
         <tr>
-        <td>9</td>
+        <td>16</td>
         <td>Modifying a Configurable Timeout Value</td>
         <td>Ensure that the service has a configurable timeout value, and that the configured value does effectively alter the service time out time, and that it times out gracefully.</td>
         <td>Medium</td>
     </tr>
     <tr>
-        <td>10</td>
+        <td>17</td>
         <td>Handling a Well-formatted CSV File with a CSV Injection of Malicious Code</td>
         <td>Ensure that the service can identify and reject a CSV file that has a CSV injection, with that rejection being handled gracefully.</td>
         <td>Medium</td>
     </tr>
     <tr>
-        <td>11</td>
+        <td>18</td>
         <td>Ensuring that the Provided Documentation for the Service is Sufficient</td>
         <td>Ensure that a user with no knowledge of the product does not have difficulty with comprehending and following the instructions that are provided in the documentation for the service</td>
         <td>Medium</td>
     </tr>
     <tr>
-        <td>12</td>
+        <td>19</td>
         <td>Ensuring Multi-threading Works for the Service</td>
         <td>Ensure that the service can be multi-threaded for multiple CSVs to be processed at once.</td>
         <td>Low</td>
