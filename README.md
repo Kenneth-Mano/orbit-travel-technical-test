@@ -332,7 +332,7 @@ Describe some of the test cases for a service that processes CSV files.
     </tr>
     <tr>
         <td>12</td>
-        <td>Ensuring Multi-threading works for the Service</td>
+        <td>Ensuring Multi-threading Works for the Service</td>
         <td>Ensure that the service can be multi-threaded for multiple CSVs to be processed at once.</td>
         <td>Low</td>
     </tr>
