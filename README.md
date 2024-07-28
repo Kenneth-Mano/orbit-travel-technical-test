@@ -172,54 +172,74 @@ The testing tools and approaches used will be a combination of manual and automa
         <td>Run an invalid prepared INSERT query (ie, will return an error from the database), where the prepared query is sent to the server separate from the data, and ensure that the service can handle this error gracefully</td>
         <td>Medium</td>
     </tr>
-    <tr>
+    </tr>
+        <tr>
         <td>15</td>
+        <td>Interrupting the Service</td>
+        <td>Ensure that the service can be interrupted that it can be easily terminated and handles that termination gracefully.</td>
+        <td>Medium</td>
+    </tr>
+    <tr>
+        <td>16</td>
         <td>Using Promise Wrappers that Resolve Successfully for SELECT queries</td>
         <td>Ensure that the service is able to handle promise wrappers for a SELECT query that resolves successfully (ie, does not return an error from the database) and ensure that the returned results are as expected</td>
         <td>Medium</td>
     </tr>
     <tr>
-        <td>16</td>
+        <td>17</td>
         <td>Using Promise Wrappers that Does not Resolve Successfully for SELECT queries</td>
         <td>Ensure that the service is able to handle promise wrappers for a SELECT query that does not resolve successfully (ie, returns an error from the database) and ensure that the service can handle this error gracefully</td>
         <td>Medium</td>
     </tr>
     <tr>
-        <td>17</td>
+        <td>18</td>
         <td>Using Promise Wrappers that Resolve Successfully for INSERT queries</td>
         <td>Ensure that the service is able to handle promise wrappers for a INSERT query that resolves successfully (ie, does not return an error from the database) and ensure that the database is modified accordingly</td>
         <td>Medium</td>
     </tr>
     <tr>
-        <td>18</td>
+        <td>19</td>
         <td>Using Promise Wrappers that Does not Resolve Successfully for INSERT queries</td>
         <td>Ensure that the service is able to handle promise wrappers for a INSERT query that that does not resolve successfully (ie, returns an error from the database) and ensure that the service can handle this error gracefully</td>
         <td>Medium</td>
     </tr>
     <tr>
-        <td>19</td>
+        <td>20</td>
+        <td>Ensuring that the Provided Documentation for the Service is Sufficient</td>
+        <td>Ensure that a user with no knowledge of the product does not have difficulty with comprehending and following the instructions that are provided in the documentation for the service</td>
+        <td>Medium</td>
+    </tr>
+    <tr>
+        <td>21</td>
         <td>Using Connection Pools</td>
         <td>Ensure that the service is able to utilize connection pools that are provided by MYSQL2 for better latency of queries</td>
         <td>Low</td>
     </tr>
     <tr>
-        <td>20</td>
+        <td>22</td>
         <td>Using Whitelist Protection for Query Parts</td>
         <td>Ensure that the service can work with a whitelist of SQL query parts to protect against SQL injection</td>
         <td>Low</td>
     </tr>
     <tr>
-        <td>21</td>
-        <td>Run Multithreads of Queries as a Performance Test</td>
-        <td></td>
+        <td>23</td>
+        <td>Run Multithreads of Queries</td>
+        <td>Setting up multiple remote hosts to use the service to query the database, and ensuring that the service can handle this.</td>
         <td>Low</td>
     </tr>
     <tr>
-        <td>22</td>
-        <td>Ensuring that the Provided Documentation for the Service is Sufficient</td>
-        <td>Ensure that a user with no knowledge of the product does not have difficulty with comprehending and following the instructions that are provided in the documentation for the service</td>
+        <td>24</td>
+        <td>Run Multithreads of Queries as a Performance Test</td>
+        <td>Gradually increasing the number of queries being run by the service to test the performance capabilities of the service.</td>
         <td>Low</td>
     </tr>
+        <tr>
+        <td>25</td>
+        <td>Running Queries above the Established Performance Benchmark</td>
+        <td>Ensuring that the service can either gracefully terminate or queue queries that are being sent to it if it is being sent more queries than it can handle.</td>
+        <td>Low</td>
+    </tr>
+
 </table>
 
 Case 2
@@ -279,28 +299,41 @@ Describe some of the test cases for a service that processes CSV files.
         <td>Ensure that the service gracefully handles consuming a file that is not a CSV file and returns a useful error to the user.</td>
         <td>Medium</td>
     </tr>
-    <tr>
+    </tr>
+        <tr>
         <td>7</td>
+        <td>Interrupting the Service</td>
+        <td>Ensure that the service can be interrupted while it is consuming a CSV file, that it can be easily terminated and handles that termination gracefully.</td>
+        <td>Medium</td>
+    </tr>
+    <tr>
+        <td>8</td>
         <td>Consuming a Well-formatted CSV File with a very large Number of Data Values</td>
         <td>Ensure that the service can consume a well-formatted CSV file that has a very large number of data values, with an appropriate indicator to the user if the service is still processing the file that has been provided, and good error handling if the service times out.</td>
         <td>Medium</td>
     </tr>
         <tr>
-        <td>8</td>
+        <td>9</td>
         <td>Modifying a Configurable Timeout Value</td>
         <td>Ensure that the service has a configurable timeout value, and that the configured value does effectively alter the service time out time, and that it times out gracefully.</td>
         <td>Medium</td>
     </tr>
     <tr>
-        <td>9</td>
+        <td>10</td>
         <td>Handling a Well-formatted CSV File with a CSV Injection of Malicious Code</td>
         <td>Ensure that the service can identify and reject a CSV file that has a CSV injection, with that rejection being handled gracefully.</td>
         <td>Medium</td>
     </tr>
     <tr>
-        <td>10</td>
+        <td>11</td>
         <td>Ensuring that the Provided Documentation for the Service is Sufficient</td>
         <td>Ensure that a user with no knowledge of the product does not have difficulty with comprehending and following the instructions that are provided in the documentation for the service</td>
+        <td>Medium</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>Ensuring Multi-threading works for the Service</td>
+        <td>Ensure that the service can be multi-threaded for multiple CSVs to be processed at once.</td>
         <td>Low</td>
     </tr>
 </table>
@@ -312,3 +345,4 @@ Case 3
 * Mathematically, no. To round a number up:
     * If the number to the right of the place value being rounded to is between 0 and 4 (inclusive), then the number in the place value being rounded to stays the same while all numbers to the right of the place value being rounded to are made 0.
     * If the number to the right of the place value being rounded to is between 5 and 9 (inclusive), then the number in the place value being rounded to is increased by 1 while all numbers to the right of the place value being rounded to are made 0.
+* However, there are other considerations too, including rounding-rules and numerical accuracy.
