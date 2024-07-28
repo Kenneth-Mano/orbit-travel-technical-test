@@ -10,7 +10,9 @@ The following are some of the testing phases that will be performed as part of t
 3. Accessibility testing - Ensuring that the documentation that is provided for the service allows installation and use by a new user of the service.
 4. Performance testing - Determining the current performance capabilities of the service and publishing them in the documentation. It is likely the case that future performance augmentations, including meeting performance SLAs will be left to future iterations of the service.
 
-The testing tools and approaches used will be a combination of manual and automated tools and approaches. Manual testing can be used to ensure that the basic functionality of the service is provided, for ensuring basic security protections are in place, and for ensuring that the service is accessible. Automated testing will be especially useful for longevity of the service. This can be by creating automated smoke checks, as well as for performance testing of the service.
+The testing tools used will be a combination of manual and automated tools. Manual testing can be used to ensure that the basic functionality of the service is provided, for ensuring basic security protections are in place, and for ensuring that the service is accessible. Automated testing will be especially useful for longevity of the service. This can be by creating automated smoke checks, as well as for performance testing of the service.
+
+Finally, in the absence of clear requirements on the functional and non-functional aspects of the service, exploratory and risk-based testing approaches should be used. This will allow testers to seek out any and all information available regarding the product, to create tests based on the information gathered, to rank these in order of priority, and to therefore achieve a sufficient level of coverage for a minimum viable service to be developed and deployed, with respect to the constraints of the project.
 
 <h3>Test Risks</h3>
 <table>
